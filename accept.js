@@ -24,7 +24,7 @@ client.logOn(logOnOptions);
 client.on('loggedOn', () => {
 	console.log('Logged into Steam');
 	client.setPersona(SteamUser.Steam.EPersonaState.Online);
-	client.gamesPlayed(['Idling with Node.JS', 730, 24980, 440, 8870, 49520, 204880, 218620]); //Idling Game
+	client.gamesPlayed(['Idling with Node.JS', 440]); //Idling Game
 });
 
 client.on('webSession', (sessionid, cookies) => {
