@@ -31,7 +31,7 @@ client.on('webSession', (sessionid, cookies) => {
 	community.startConfirmationChecker(10000, 'identity_secret'); //IDENTITY_SECRET in maFile; delete this if you prefer to manually confirm mobile auth.
 });
 
-manager.on('newOffer', (offer) => { //auto accepts donations (no items on your end)mdcmd
+manager.on('newOffer', (offer) => { //auto accepts donations (no items on your end)
 	if (offer.itemsToGive.length === 0) {
 		offer.accept((err, status) => {
 			if (err) {
