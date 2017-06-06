@@ -14,7 +14,7 @@ const manager = new TradeOfferManager({
 const logOnOptions = {
 	accountName: 'USERNAME', //STEAM USERNAME
 	password: 'PASSWORD', //STEAM PASSWORD
-	twoFactorCode: SteamTotp.generateAuthCode('shared_secret') //SHARED_SECRET in maFile
+	twoFactorCode: SteamTotp.generateAuthCode('shared_secret') //SHARED_SECRET in maFile; can remove if you want to manually input mobile codes each time
 };
 
 client.logOn(logOnOptions);
