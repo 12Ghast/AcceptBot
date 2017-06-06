@@ -18,6 +18,5 @@ client.on('loggedOn', () => {
 });
 
 client.on('webSession', (sessionid, cookies) => {
-	manager.setCookies(cookies);
 	community.setCookies(cookies);
 });
