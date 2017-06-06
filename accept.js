@@ -2,8 +2,6 @@ const SteamUser = require('steam-user');
 const SteamTotp = require('steam-totp');
 const SteamCommunity = require('steamcommunity');
 const TradeOfferManager = require('steam-tradeoffer-manager');
-var request = require('request');
-const api = 'STEAM-API-KEY'; //ADD STEAM API KEY HERE
 
 const client = new SteamUser();
 const community = new SteamCommunity();
@@ -30,10 +28,10 @@ client.on('loggedOn', () => {
 client.on('webSession', (sessionid, cookies) => {
 	manager.setCookies(cookies);
 	community.setCookies(cookies);
-	community.startConfirmationChecker(10000, 'identity_secret'); //IDENTITY_SECRET in maFile
+	community.startConfirmationChecker(10000, 'identity_secret'); //IDENTITY_SECRET in maFile; delete this if you prefer to manually confirm mobile auth.
 });
 
-manager.on('newOffer', (offer) => {
+manager.on('newOffer', (offer) => { //auto accepts donations (no items on your end)mdcmd
 	if (offer.itemsToGive.length === 0) {
 		offer.accept((err, status) => {
 			if (err) {
